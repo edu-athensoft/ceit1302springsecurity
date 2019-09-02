@@ -11,12 +11,8 @@
 	<mvc:annotation-driven></mvc:annotation-driven>
 	
 	<!-- Component auto-scan support -->
-	<context:component-scan base-package="com.athensoft.global.controller"></context:component-scan>
-	<context:component-scan base-package="com.athensoft.member.controller"></context:component-scan>
-	<context:component-scan base-package="com.athensoft.member.service"></context:component-scan>
-	<context:component-scan base-package="com.athensoft.member.dao"></context:component-scan>
-	<context:component-scan base-package="com.athensoft.demo.controller"></context:component-scan>
-		
+	<context:component-scan base-package="com.athensoft.demo.*.controller"></context:component-scan>
+	<context:component-scan base-package="com.athensoft.demo.*.service"></context:component-scan>
 	 
 	<!-- View Resolver -->
 	<bean id="jspViewResolver"
@@ -26,33 +22,6 @@
 	</bean>
 	
 	
-	<!-- Multi-language and i18n support -->
-	<!--
-	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-		<property name="basenames">
-			<list>
-				<value>com/athensoft/resources/site</value>
-				<value>com/athensoft/resources/learning</value>
-				<value>com/athensoft/resources/graphic</value>
-				<value>com/athensoft/resources/seo</value>
-				<value>com/athensoft/resources/errorcodes</value>
-			</list>
-		</property>
-	</bean>
-	-->
-	
-	<!--  
-	<bean id="localeResolver"
-		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
-		<property name="defaultLocale" value="zh_CN"></property>
-	</bean>	
-	
-	<mvc:interceptors>
-       <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-       	<property name="paramName" value="lang"/>
-       </bean>
-	</mvc:interceptors>
-	-->
 	
 	<!-- static resources -->
 	<mvc:resources mapping="/js/**" location="js/" />
@@ -61,7 +30,6 @@
 	<mvc:resources mapping="/images/**" location="images/" />
 	<mvc:resources mapping="/img/**" location="img/" />
 	<mvc:resources mapping="/css/**" location="css/" />
-	
 	<mvc:resources mapping="/fonts/**" location="fonts/" />
 	<mvc:resources mapping="/vendor/**" location="vendor/" />
 	<mvc:resources mapping="/video/**" location="video/" />
